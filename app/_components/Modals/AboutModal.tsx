@@ -1,15 +1,10 @@
 import { Box, HStack, Stack, Text } from "@chakra-ui/react";
 import { useModals } from "../../_providers/ModalContext";
+import Modal from "./Modal/Modal";
 
 const MODAL_ID = "about";
 
 const AboutModal = () => {
-  const { modals, closeModal } = useModals();
-
-  const isOpen = modals.some((modal) => modal.id === MODAL_ID);
-
-  if (!isOpen) return null;
-
   const sentences = [
     "👋 Hey there I'm Alex.",
     "I’m a 📍 Berlin-based Austrian-Canadian fullstack engineer into building amazing products with fullstack Typescript.",
@@ -22,44 +17,13 @@ const AboutModal = () => {
   ];
 
   return (
-    <Stack
-      maxWidth={"600px"}
-      w="60vw"
-      position={"absolute"}
-      // center
-      top={Math.random() * 50 + "%"}
-      left={Math.random() * 50 + "%"}
-      border={"1px solid black"}
-      bgColor={"white"}
-      rounded="2px"
-    >
-      <HStack
-        justify={"space-between"}
-        px={4}
-        fontFamily={"chicago"}
-        bgColor={"darkgray"}
-        borderBottom={"1px solid black"}
-      >
-        <Box fontFamily={"toronto"} onClick={() => closeModal(MODAL_ID)}>
-          x
-        </Box>
-        <Box>About Me</Box>
-        <Box />
-      </HStack>
-      <Stack
-        fontFamily={"toronto"}
-        fontSize={"sm"}
-        p={4}
-        maxHeight={"60vh"}
-        overflow={"scroll"}
-      >
-        {sentences.map((sentence, i) => (
-          <Text key={i}>
-            {`>>`} {sentence}
-          </Text>
-        ))}
-      </Stack>
-    </Stack>
+    <Modal id={MODAL_ID} title={"README"}>
+      {sentences.map((sentence, i) => (
+        <Text key={i}>
+          {`>>`} {sentence}
+        </Text>
+      ))}
+    </Modal>
   );
 };
 

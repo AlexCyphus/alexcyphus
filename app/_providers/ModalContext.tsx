@@ -3,20 +3,24 @@
 import React, { createContext, useContext, useState } from "react";
 
 interface ModalProps {
-  isOpen: boolean;
   id: string;
+  zIndex: number | undefined;
 }
 
 export interface ModalContextProps {
   modals: ModalProps[];
   openModal: (id: string) => void;
   closeModal: (id: string) => void;
+  moveModalToFront: (id: string) => void;
+  closeAllModals: () => void;
 }
 
 const ModalContext = createContext<ModalContextProps>({
   modals: [],
   openModal: () => {},
   closeModal: () => {},
+  moveModalToFront: () => {},
+  closeAllModals: () => {},
 });
 
 interface ModalProviderProps {
@@ -28,7 +32,7 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
 
   const openModal = (id: string) => {
     setModals((prev) => {
-      return [...prev, { isOpen: true, id: id }];
+      return [...prev, { zIndex: undefined, id: id }];
     });
   };
 
@@ -38,8 +42,35 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
     });
   };
 
+  const closeAllModals = () => {
+    setModals([]);
+  };
+
+  const moveModalToFront = (id: string) => {
+    const highestZIndex = modals.reduce((acc, modal) => {
+      return modal.zIndex ? Math.max(acc, modal.zIndex) : acc;
+    }, 0);
+
+    setModals((prev) => {
+      return prev.map((modal) => {
+        if (modal.id === id) {
+          return { ...modal, zIndex: highestZIndex + 1 };
+        }
+        return modal;
+      });
+    });
+  };
+
   return (
-    <ModalContext.Provider value={{ openModal, closeModal, modals }}>
+    <ModalContext.Provider
+      value={{
+        openModal,
+        closeModal,
+        modals,
+        moveModalToFront,
+        closeAllModals,
+      }}
+    >
       {children}
     </ModalContext.Provider>
   );

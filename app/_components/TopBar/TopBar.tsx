@@ -1,18 +1,13 @@
 "use client";
 
-import {
-  HStack,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-  Text,
-} from "@chakra-ui/react";
-import TopBarDropdown, { TopBarDropdownProps } from "./TopBarDropdown";
+import { HStack, useModal } from "@chakra-ui/react";
 import { useSystemContext } from "../../_providers/SystemContext";
+import TopBarDropdown, { TopBarDropdownProps } from "./TopBarDropdown";
+import { useModals } from "../../_providers/ModalContext";
 
 const TopBar = () => {
   const { setState } = useSystemContext();
+  const { closeAllModals } = useModals();
 
   const topBarData: TopBarDropdownProps[] = [
     {
@@ -27,7 +22,10 @@ const TopBar = () => {
         {
           title: "Power off",
           action: () => {
-            setState({ isOn: false });
+            setState({
+              isOn: false,
+              highestZIndex: 0,
+            });
           },
         },
       ],
@@ -54,9 +52,7 @@ const TopBar = () => {
       options: [
         {
           title: "Close all windows",
-          action: () => {
-            window.close();
-          },
+          action: closeAllModals,
         },
       ],
     },

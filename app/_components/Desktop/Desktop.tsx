@@ -5,10 +5,10 @@ import AboutModal from "../Modals/AboutModal";
 
 const applications: ApplicationIconProps[] = [
   {
-    title: "About",
+    title: "README",
     icon: (
       <Text textAlign="center" fontSize={"x-large"}>
-        🥭
+        📄
       </Text>
     ),
     id: "about",
@@ -17,7 +17,7 @@ const applications: ApplicationIconProps[] = [
     title: "Travel",
     icon: (
       <Text textAlign="center" fontSize={"x-large"}>
-        ✈️
+        🌍
       </Text>
     ),
     id: "travel",
@@ -35,6 +35,7 @@ const Desktop = () => {
     >
       <AboutModal />
       <TravelModal />
+      <Text fontFamily={"sanfran"}>Welcome to AlexOS</Text>
       <Stack p={4}>
         {applications.map((application) => (
           <ApplicationIcon key={application.id} {...application} />

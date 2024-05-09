@@ -16,13 +16,14 @@ const ApplicationIcon: React.FC<ApplicationIconProps> = ({
 }) => {
   const [numOfClicks, setNumOfClicks] = useState(0);
 
-  const { openModal } = useModals();
+  const { openModal, moveModalToFront } = useModals();
 
   const handleClick = () => {
     if (numOfClicks === 1) {
       // open modal
       setNumOfClicks(0);
       openModal(id);
+      moveModalToFront(id);
     } else {
       setNumOfClicks(numOfClicks + 1);
     }
@@ -34,7 +35,13 @@ const ApplicationIcon: React.FC<ApplicationIconProps> = ({
 
   return (
     <OutsideClickHandler onClickOutside={handleOutsideClick}>
-      <Stack w="max-content" justify={"center"} onClick={handleClick}>
+      <Stack
+        w="max-content"
+        justify={"center"}
+        onClick={handleClick}
+        userSelect={"none"}
+        cursor={"pointer"}
+      >
         {icon}
         <Text
           bgColor={numOfClicks === 0 ? "white" : "black"}

@@ -5,13 +5,15 @@ import React, { createContext, useContext, useState } from "react";
 export interface SystemContextProps {
   state: {
     isOn: boolean;
+    highestZIndex: number;
   };
-  setState: (newState: SystemContextProps["state"]) => void;
+  setState: (newState: Partial<SystemContextProps["state"]>) => void;
 }
 
 const SystemContext = createContext<SystemContextProps>({
   state: {
     isOn: true,
+    highestZIndex: 1,
   },
   setState: () => {},
 });
@@ -25,10 +27,10 @@ export const SystemContextProvider: React.FC<SystemContextProviderProps> = ({
 }) => {
   const [state, setState] = useState<SystemContextProps["state"]>({
     isOn: true,
+    highestZIndex: 1,
   });
 
-  const mutateState = (newState: SystemContextProps["state"]) => {
-    console.log(newState);
+  const mutateState = (newState: Partial<SystemContextProps["state"]>) => {
     setState((prevState) => ({ ...prevState, ...newState }));
   };
 

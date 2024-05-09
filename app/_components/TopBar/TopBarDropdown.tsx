@@ -27,7 +27,7 @@ const TopBarDropdown: React.FC<TopBarDropdownProps> = ({ options, title }) => {
           <MenuList
             rounded="none"
             py={0}
-            mt={"-7px"}
+            mt={"-8px"}
             borderColor={"black"}
             borderWidth={1}
           >
