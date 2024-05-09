@@ -1,5 +1,7 @@
+import { ChakraProvider } from "@chakra-ui/react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Providers from "./_providers/Providers";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,7 +18,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <ChakraProvider>
+        <body
+          style={{
+            maxWidth: "100vw",
+            maxHeight: "100vh",
+            overflow: "hidden",
+          }}
+        >
+          {children}
+        </body>
+      </ChakraProvider>
     </html>
   );
 }
