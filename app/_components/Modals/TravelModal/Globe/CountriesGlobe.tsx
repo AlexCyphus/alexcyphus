@@ -11,7 +11,13 @@ const CountriesGlobe: React.FC = () => {
   const globeSize = window.screen.width > 450 ? 450 : 300;
 
   return (
-    <Stack cursor={"grabbing"} mt={-12} mb={-12}>
+    <Stack
+      cursor={"grabbing"}
+      mt={-12}
+      mb={-12}
+      align={"center"}
+      justify={"center"}
+    >
       <Globe
         ref={globeRef}
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
