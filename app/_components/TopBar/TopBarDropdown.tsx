@@ -30,6 +30,7 @@ const TopBarDropdown: React.FC<TopBarDropdownProps> = ({ options, title }) => {
             mt={"-8px"}
             borderColor={"black"}
             borderWidth={1}
+            zIndex={1000}
           >
             {options.map((option) => (
               <MenuItem
