@@ -1,5 +1,4 @@
-import { Box, HStack, Stack, Text } from "@chakra-ui/react";
-import { useModals } from "../../_providers/ModalContext";
+import { Text } from "@chakra-ui/react";
 import Modal from "./Modal/Modal";
 
 const MODAL_ID = "about";

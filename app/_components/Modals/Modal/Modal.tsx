@@ -1,8 +1,7 @@
 import { Stack } from "@chakra-ui/react";
-import Draggable from "react-draggable";
 import { useModals } from "../../../_providers/ModalContext";
-import { useSystemContext } from "../../../_providers/SystemContext";
 import ModalTopBar from "./ModalTopBar";
+import Draggable from "react-draggable";
 
 export interface ModalProps {
   id: string;
@@ -12,7 +11,6 @@ export interface ModalProps {
 
 const Modal: React.FC<ModalProps> = ({ id, title, children }) => {
   const { modals, moveModalToFront } = useModals();
-  const { state, setState } = useSystemContext();
 
   const modalData = modals.find((modal) => modal.id === id);
 
@@ -31,6 +29,7 @@ const Modal: React.FC<ModalProps> = ({ id, title, children }) => {
         border={"1px solid black"}
         bgColor={"white"}
         rounded="2px"
+        gap={0}
         pos={"absolute"}
         zIndex={modalData.zIndex}
       >

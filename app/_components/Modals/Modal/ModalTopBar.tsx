@@ -1,5 +1,7 @@
-import { Box, HStack, Text } from "@chakra-ui/react";
+import { Box, HStack } from "@chakra-ui/react";
 import { useModals } from "../../../_providers/ModalContext";
+import { generateRandomColor, getNewColor } from "../../../_utils/colorUtils";
+import { useRef, useState } from "react";
 
 interface Props {
   modalId: string;
@@ -9,15 +11,18 @@ interface Props {
 const ModalTopBar: React.FC<Props> = ({ modalId, title }) => {
   const { closeModal } = useModals();
 
+  const [topBarColor, setTopBarColor] = useState<string>(generateRandomColor());
+
   return (
     <HStack
       justify={"space-between"}
       cursor="grabbing"
       px={4}
       fontFamily={"chicago"}
-      bgColor={"green.100"}
+      bgColor={topBarColor}
       borderBottom={"1px solid black"}
       className="draggable-handle"
+      onClick={() => setTopBarColor(getNewColor(topBarColor))}
     >
       <Box
         fontFamily={"toronto"}

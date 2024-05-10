@@ -1,3 +1,5 @@
+"use client";
+
 import { ModalProvider } from "./ModalContext";
 import { SystemContextProvider } from "./SystemContext";
 

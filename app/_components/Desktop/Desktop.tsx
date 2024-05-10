@@ -1,10 +1,9 @@
-import { HStack, Stack, Text } from "@chakra-ui/react";
-import ApplicationIcon, { ApplicationIconProps } from "./ApplicationIcon";
-import TravelModal from "../Modals/TravelModal";
-import AboutModal from "../Modals/AboutModal";
+import { HStack, Stack } from "@chakra-ui/react";
 
-import React from "react";
 import { Box } from "@chakra-ui/react";
+import Modals from "../Modals/Modals";
+import Wobblies from "../Wobblies/Wobblies";
+import Applications from "./Applications";
 
 const WaveText = () => {
   return (
@@ -56,27 +55,6 @@ const WaveText = () => {
   );
 };
 
-const applications: ApplicationIconProps[] = [
-  {
-    title: "README",
-    icon: (
-      <Text textAlign="center" fontSize={"x-large"}>
-        📄
-      </Text>
-    ),
-    id: "about",
-  },
-  {
-    title: "Travel",
-    icon: (
-      <Text textAlign="center" fontSize={"x-large"}>
-        🌍
-      </Text>
-    ),
-    id: "travel",
-  },
-];
-
 const Desktop = () => {
   return (
     <Stack
@@ -86,14 +64,13 @@ const Desktop = () => {
       maxHeight={"calc(100vh - 33px)"}
       overflow={"clip"}
     >
-      <AboutModal />
-      <TravelModal />
-      <WaveText />
-      <Stack p={4}>
-        {applications.map((application) => (
-          <ApplicationIcon key={application.id} {...application} />
-        ))}
-      </Stack>
+      {typeof window !== "undefined" && (
+        <>
+          <Applications />
+          <Modals />
+          <Wobblies />
+        </>
+      )}
     </Stack>
   );
 };

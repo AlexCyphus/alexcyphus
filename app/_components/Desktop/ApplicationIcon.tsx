@@ -1,7 +1,8 @@
-import { Stack, Text } from "@chakra-ui/react";
+import { Box, Stack, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
-import OutsideClickHandler from "./OutsideClickHandler";
+import Draggable from "react-draggable";
 import { useModals } from "../../_providers/ModalContext";
+import OutsideClickHandler from "./OutsideClickHandler";
 
 export interface ApplicationIconProps {
   title: string;
@@ -34,25 +35,32 @@ const ApplicationIcon: React.FC<ApplicationIconProps> = ({
   };
 
   return (
-    <OutsideClickHandler onClickOutside={handleOutsideClick}>
-      <Stack
-        w="max-content"
-        justify={"center"}
-        onClick={handleClick}
-        userSelect={"none"}
-        cursor={"pointer"}
-      >
-        {icon}
-        <Text
-          bgColor={numOfClicks === 0 ? "white" : "black"}
-          px={1}
-          color={numOfClicks === 0 ? "black" : "white"}
-          userSelect={"none"}
-        >
-          {title}
-        </Text>
-      </Stack>
-    </OutsideClickHandler>
+    <Draggable handle=".draggable-handle" bounds="parent">
+      <Box w="min-content" className="draggable-handle">
+        <OutsideClickHandler onClickOutside={handleOutsideClick}>
+          <Stack
+            w="max-content"
+            justify={"center"}
+            onClick={(e) => {
+              // check if drag
+              handleClick();
+            }}
+            userSelect={"none"}
+            cursor={"pointer"}
+          >
+            {icon}
+            <Text
+              bgColor={numOfClicks === 0 ? "white" : "black"}
+              px={1}
+              color={numOfClicks === 0 ? "black" : "white"}
+              userSelect={"none"}
+            >
+              {title}
+            </Text>
+          </Stack>
+        </OutsideClickHandler>
+      </Box>
+    </Draggable>
   );
 };
 
