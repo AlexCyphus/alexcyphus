@@ -35,7 +35,7 @@ const ApplicationIcon: React.FC<ApplicationIconProps> = ({
   };
 
   return (
-    <Draggable handle=".draggable-handle" bounds="parent">
+    <Draggable handle=".draggable-handle" bounds=".desktop">
       <Box w="min-content" className="draggable-handle">
         <OutsideClickHandler onClickOutside={handleOutsideClick}>
           <Stack

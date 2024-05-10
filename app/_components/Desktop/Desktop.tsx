@@ -64,6 +64,7 @@ const Desktop = () => {
       maxHeight={"calc(100vh - 33px)"}
       overflow={"clip"}
       position={"relative"}
+      className="desktop"
     >
       {typeof window !== "undefined" && (
         <>

@@ -29,7 +29,7 @@ const Wobblie: React.FC<IWobblie> = ({ color, id, height }) => {
       onMouseDown={() => changeWobblieColor(id)}
       defaultPosition={defaultPosition}
     >
-      <Box className="handle" position={"absolute"}>
+      <Box className="handle" position={"absolute"} zIndex={0}>
         <Box
           userSelect={"none"}
           draggable={false}

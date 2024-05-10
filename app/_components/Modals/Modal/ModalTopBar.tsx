@@ -28,7 +28,7 @@ const ModalTopBar: React.FC<Props> = ({ modalId, title }) => {
         fontFamily={"toronto"}
         onClick={() => closeModal(modalId)}
         cursor={"pointer"}
-        bgColor={"lightgray"}
+        bgColor={"white"}
         w={"12px"}
         h={"12px"}
         border={"1px solid black"}

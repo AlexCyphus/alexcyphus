@@ -44,7 +44,14 @@ const Applications = () => {
   if (typeof window === "undefined") return null;
 
   return (
-    <Stack p={4} gap={8} w="max-content" justify={"center"} align={"center"}>
+    <Stack
+      p={4}
+      gap={8}
+      w="max-content"
+      justify={"center"}
+      align={"center"}
+      zIndex={1}
+    >
       {applications.map((application) => (
         <ApplicationIcon key={application.id} {...application} />
       ))}
