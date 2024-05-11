@@ -15,13 +15,10 @@ export interface IWobblie {
 const Wobblie: React.FC<IWobblie> = ({ color, id, height, animation }) => {
   const { changeWobblieColor } = useWobblies();
 
-  const defaultPosition =
-    typeof window === "undefined"
-      ? { x: 0, y: 0 }
-      : {
-          x: Math.floor(Math.random() * window.innerWidth),
-          y: Math.floor(Math.random() * window.innerHeight),
-        };
+  const defaultPosition = {
+    x: Math.floor(Math.random() * window.innerWidth - height),
+    y: Math.floor(Math.random() * window.innerHeight - height),
+  };
 
   return (
     <Draggable

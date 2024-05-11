@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "alexcyph.us",
+  title: "Alex's Corner of the Internet",
   description: "🌐 Welcome to my corner of the internet",
   icons: {
     icon: "/favicon.ico",
