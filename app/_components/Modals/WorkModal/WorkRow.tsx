@@ -1,4 +1,4 @@
-import { Divider, HStack, Image, Stack, Text } from "@chakra-ui/react";
+import { HStack, Image, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import { generateRandomColor, getNewColor } from "../../../_utils/colorUtils";
 
@@ -18,11 +18,7 @@ const WorkRow: React.FC<WorkRowProps> = ({
   const [color, setColor] = React.useState<string>(generateRandomColor());
 
   return (
-    <Stack
-      _hover={{
-        scale: 1.5,
-      }}
-    >
+    <Stack role="group" py={4} scale={5}>
       <HStack gap={4}>
         <Stack
           bgColor={color}
@@ -45,7 +41,6 @@ const WorkRow: React.FC<WorkRowProps> = ({
           </Text>
         </Stack>
       </HStack>
-      <Divider />
       <Text fontSize={"sm"}>{description}</Text>
     </Stack>
   );

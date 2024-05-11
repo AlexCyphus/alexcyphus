@@ -20,7 +20,12 @@ const ApplicationIcon: React.FC<ApplicationIconProps> = ({
   const { openModal, moveModalToFront } = useModals();
 
   const handleClick = () => {
-    if (numOfClicks === 1) {
+    const isMobileDevice = window.innerWidth < 768;
+
+    if (isMobileDevice) {
+      openModal(id);
+      moveModalToFront(id);
+    } else if (numOfClicks === 1) {
       // open modal
       setNumOfClicks(0);
       openModal(id);

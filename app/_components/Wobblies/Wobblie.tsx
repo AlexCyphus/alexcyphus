@@ -9,9 +9,10 @@ export interface IWobblie {
   color: string;
   id: string;
   height: number;
+  animation: string;
 }
 
-const Wobblie: React.FC<IWobblie> = ({ color, id, height }) => {
+const Wobblie: React.FC<IWobblie> = ({ color, id, height, animation }) => {
   const { changeWobblieColor } = useWobblies();
 
   const defaultPosition =
@@ -35,7 +36,7 @@ const Wobblie: React.FC<IWobblie> = ({ color, id, height }) => {
           draggable={false}
           zIndex={0}
           color={color}
-          animation={`spin 6s linear infinite`}
+          animation={animation}
           dangerouslySetInnerHTML={{
             __html: getWobblieHtml(height),
           }}

@@ -35,11 +35,11 @@ const Modal: React.FC<ModalProps> = ({ id, title, children }) => {
       >
         <ModalTopBar modalId={id} title={title} />
         <Stack
-          fontFamily={"toronto"}
           fontSize={"sm"}
           p={4}
           maxHeight={"60vh"}
           overflow={"scroll"}
+          fontFamily={"ibm"}
         >
           {children}
         </Stack>

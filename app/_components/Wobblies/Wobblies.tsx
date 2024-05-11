@@ -14,6 +14,7 @@ const Wobblies = () => {
           color={wobblie.color}
           id={wobblie.id}
           height={wobblie.height}
+          animation={wobblie.animation}
         />
       ))}
     </>

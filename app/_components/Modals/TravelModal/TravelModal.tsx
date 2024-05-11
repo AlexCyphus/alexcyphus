@@ -20,7 +20,7 @@ const TravelModal = () => {
 
   return (
     <Modal id={MODAL_ID} title={"Travel"}>
-      <Text>
+      <Text fontFamily={"ibm"}>
         {`I've been to ${allVisitedCountriesLength} countries and counting! I'm on
         a mission to make this globe less white.`}
       </Text>

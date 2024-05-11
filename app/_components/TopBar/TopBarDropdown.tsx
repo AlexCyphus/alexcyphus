@@ -21,6 +21,7 @@ const TopBarDropdown: React.FC<TopBarDropdownProps> = ({ options, title }) => {
             bg={isOpen ? "black" : "white"}
             color={isOpen ? "white" : "black"}
             h="100%"
+            fontSize={"sm"}
           >
             <Text>{title}</Text>
           </MenuButton>
@@ -30,6 +31,7 @@ const TopBarDropdown: React.FC<TopBarDropdownProps> = ({ options, title }) => {
             mt={"-8px"}
             borderColor={"black"}
             borderWidth={1}
+            fontSize={"sm"}
             zIndex={1000}
           >
             {options.map((option) => (

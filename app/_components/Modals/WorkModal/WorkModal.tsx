@@ -5,10 +5,10 @@ import WorkRow, { WorkRowProps } from "./WorkRow";
 import AmeyoLogo from "./images/ameyo-logo.png";
 import LhotseLogo from "./images/lhotse-logo.png";
 import TandemLogo from "./images/tandem-logo.png";
-// import ThroneLogo from "./images/throne-logo.png";
+import ThroneLogo from "./images/throne-logo.png";
 import VicoLogo from "./images/vico-logo.png";
 import KaardsLogo from "./images/kaards-logo.png";
-// import StackinverseLogo from "./images/stackinverse-logo.png";
+import StackinverseLogo from "./images/stackinverse-logo.png";
 
 const MODAL_ID = "work";
 
@@ -16,14 +16,14 @@ const projects: WorkRowProps[] = [
   {
     title: "Throne // Fullstack Engineer",
     date: "2022-2024",
-    image: "",
+    image: ThroneLogo.src,
     description:
-      "Ensuring fans can send giant Snorlax stuffies to their favorite creators.",
+      "Ensuring fans can send giant Snorlax stuffies to their favorite creators. Frontend, backend, + mobile.",
   },
   {
     title: "stackinverse.ca // Creator",
     date: "2024-2024",
-    image: "",
+    image: StackinverseLogo.src,
     description:
       "Failed side-project #3: A platform for startups to reach out to senior engineers in Toronto. Engineers loved it - but we launched at the height of tech layoffs :(",
   },
@@ -66,9 +66,9 @@ const projects: WorkRowProps[] = [
 
 const WorkModal = () => {
   return (
-    <Modal id={MODAL_ID} title="Projects">
+    <Modal id={MODAL_ID} title="Work">
       <Text>
-        {`🧑‍💻 Some of the companies I've worked at and some of my side projects.`}
+        {`Some of the companies I've worked at and some of my side projects.`}
       </Text>
       <Divider />
       <Stack divider={<Divider />}>

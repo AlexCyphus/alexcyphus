@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: "ibm";
+  src: url("/fonts/ibm-plex-mono.ttf");
+}
+
+@font-face {
   font-family: "sanfran";
   src: url("/fonts/sanfran.ttf");
 }
@@ -42,5 +47,20 @@
   to {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+/* reverse spin */
+@-webkit-keyframes reverse-spin {
+  to {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes reverse-spin {
+  to {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
   }
 }
