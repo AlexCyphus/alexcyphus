@@ -1,7 +1,4 @@
 import { Stack } from "@chakra-ui/react";
-import Modals from "../Modals/Modals";
-import Wobblies from "../Wobblies/Wobblies";
-import Applications from "./Applications/Applications";
 import DraggableElements from "./DraggableElements";
 
 const Desktop = () => {

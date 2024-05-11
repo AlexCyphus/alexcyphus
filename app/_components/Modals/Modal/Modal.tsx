@@ -18,7 +18,7 @@ const Modal: React.FC<ModalProps> = ({ id, title, children }) => {
     const isMobile = window.innerWidth < 768;
     return isMobile
       ? { x: Math.random() * 50, y: Math.random() * 50 }
-      : { x: Math.random() * 300, y: Math.random() * 300 };
+      : { x: Math.random() * 300, y: Math.random() * 200 };
   };
 
   if (!modalData) return null;
