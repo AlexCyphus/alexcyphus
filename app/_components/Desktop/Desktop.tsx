@@ -10,7 +10,7 @@ const Desktop = () => {
       bgColor={"white"}
       h="100%"
       w="100%"
-      maxHeight={"calc(100vh - 33px)"}
+      maxHeight={"calc(100vh - 30px)"}
       overflow={"clip"}
       position={"relative"}
       className="desktop"
