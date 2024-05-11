@@ -15,7 +15,7 @@ const Desktop = () => {
       position={"relative"}
       className="desktop"
     >
-      <DraggableElements />
+      {typeof window !== "undefined" && <DraggableElements />}
     </Stack>
   );
 };

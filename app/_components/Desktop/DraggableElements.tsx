@@ -3,8 +3,6 @@ import Wobblies from "../Wobblies/Wobblies";
 import Applications from "./Applications/Applications";
 
 const DraggableElements = () => {
-  if (typeof window === "undefined") return null;
-
   return (
     <>
       <Applications />
