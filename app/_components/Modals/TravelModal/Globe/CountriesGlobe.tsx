@@ -8,13 +8,19 @@ const CountriesGlobe: React.FC = () => {
 
   if (typeof window === "undefined") return null;
 
-  const globeSize = window.screen.width > 450 ? 450 : 300;
+  const globeSize = window.screen.width > 450 ? 450 : 250;
 
   return (
     <Stack
       cursor={"grabbing"}
-      mt={-12}
-      mb={-12}
+      mt={{
+        base: -8,
+        md: -12,
+      }}
+      mb={{
+        base: -8,
+        md: -12,
+      }}
       align={"center"}
       justify={"center"}
     >

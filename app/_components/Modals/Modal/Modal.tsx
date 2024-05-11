@@ -14,18 +14,25 @@ const Modal: React.FC<ModalProps> = ({ id, title, children }) => {
 
   const modalData = modals.find((modal) => modal.id === id);
 
+  const defaultPositionBasedOnScreenSize = () => {
+    const isMobile = window.innerWidth < 768;
+    return isMobile
+      ? { x: Math.random() * 50, y: Math.random() * 50 }
+      : { x: Math.random() * 300, y: Math.random() * 300 };
+  };
+
   if (!modalData) return null;
 
   return (
     <Draggable
       handle=".draggable-handle"
-      defaultPosition={{ x: Math.random() * 300, y: Math.random() * 300 }}
+      defaultPosition={defaultPositionBasedOnScreenSize()}
       bounds="parent"
       onMouseDown={() => moveModalToFront(id)}
     >
       <Stack
         maxWidth={"600px"}
-        w="60vw"
+        w="90vw"
         border={"1px solid black"}
         bgColor={"white"}
         rounded="2px"

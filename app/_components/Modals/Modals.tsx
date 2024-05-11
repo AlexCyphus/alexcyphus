@@ -1,13 +1,8 @@
-"use client";
-
 import AboutModal from "./AboutModal";
-import WorkModal from "./WorkModal/WorkModal";
 import TravelModal from "./TravelModal/TravelModal";
+import WorkModal from "./WorkModal/WorkModal";
 
 const Modals = () => {
-  // dont render if server side
-  if (typeof window === "undefined") return null;
-
   return (
     <>
       <AboutModal />

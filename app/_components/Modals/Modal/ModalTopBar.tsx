@@ -1,4 +1,4 @@
-import { Box, HStack } from "@chakra-ui/react";
+import { Text, Box, HStack, Stack } from "@chakra-ui/react";
 import { useModals } from "../../../_providers/ModalContext";
 import { generateRandomColor, getNewColor } from "../../../_utils/colorUtils";
 import { useRef, useState } from "react";
@@ -21,23 +21,38 @@ const ModalTopBar: React.FC<Props> = ({ modalId, title }) => {
       fontFamily={"chicago"}
       bgColor={topBarColor}
       borderBottom={"1px solid black"}
-      className="draggable-handle"
       onClick={() => setTopBarColor(getNewColor(topBarColor))}
+      pos={"relative"}
     >
-      <Box
+      <Stack
         fontFamily={"toronto"}
+        position="absolute"
+        top={"3px"}
+        left={3}
         onClick={() => closeModal(modalId)}
         cursor={"pointer"}
         bgColor={"white"}
-        w={"12px"}
-        h={"12px"}
+        w={"18px"}
+        h={"18px"}
         border={"1px solid black"}
-        pos={"relative"}
         role="group"
         rounded="3px"
-      />
-      <Box>{title}</Box>
-      <Box />
+        zIndex={10000}
+        justify={"center"}
+        align={"center"}
+      >
+        <Text fontSize={"8px"} lineHeight="8px" mt="1px" fontWeight={"bold"}>
+          X
+        </Text>
+      </Stack>
+      <HStack
+        className="draggable-handle"
+        w="100%"
+        h="100%"
+        justifyContent={"center"}
+      >
+        <Box>{title}</Box>
+      </HStack>
     </HStack>
   );
 };

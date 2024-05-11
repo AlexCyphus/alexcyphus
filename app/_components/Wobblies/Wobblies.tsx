@@ -4,8 +4,6 @@ import useWobblies from "./utils/useWobblies";
 const Wobblies = () => {
   const { wobblies } = useWobblies();
 
-  if (typeof window === "undefined") return null;
-
   return (
     <>
       {wobblies.map((wobblie) => (

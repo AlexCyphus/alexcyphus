@@ -1,8 +1,8 @@
 import { Box, Stack, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import Draggable from "react-draggable";
-import { useModals } from "../../_providers/ModalContext";
-import OutsideClickHandler from "./OutsideClickHandler";
+import { useModals } from "../../../_providers/ModalContext";
+import OutsideClickHandler from "../OutsideClickHandler";
 
 export interface ApplicationIconProps {
   title: string;
@@ -39,15 +39,16 @@ const ApplicationIcon: React.FC<ApplicationIconProps> = ({
     setNumOfClicks(0); // Reset numOfClicks to 0 on outside click
   };
 
+  const isMobile = window.innerWidth < 768;
+
   return (
-    <Draggable handle=".draggable-handle" bounds=".desktop">
+    <Draggable handle=".draggable-handle" bounds=".desktop" disabled={isMobile}>
       <Box w="min-content" className="draggable-handle">
         <OutsideClickHandler onClickOutside={handleOutsideClick}>
           <Stack
             w="max-content"
             justify={"center"}
-            onClick={(e) => {
-              // check if drag
+            onClick={() => {
               handleClick();
             }}
             userSelect={"none"}

@@ -1,6 +1,6 @@
 "use client";
 
-import { Stack } from "@chakra-ui/react";
+import { Text, HStack, Stack } from "@chakra-ui/react";
 import { useSystemContext } from "../_providers/SystemContext";
 import Desktop from "./Desktop/Desktop";
 import GoodbyeScreen from "./GoodbyeScreen/GoodbyeScreen";

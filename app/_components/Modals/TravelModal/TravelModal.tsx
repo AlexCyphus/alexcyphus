@@ -35,7 +35,12 @@ const TravelModal = () => {
         🏡 Lived in ({formattedCountriesLivedIn.length})
       </Text>
       <Divider />
-      <SimpleGrid columns={2}>
+      <SimpleGrid
+        columns={{
+          base: 1,
+          md: 2,
+        }}
+      >
         {formattedCountriesLivedIn.map((country, i) => (
           <GridItem key={i}>
             <Text>{country}</Text>
@@ -47,7 +52,12 @@ const TravelModal = () => {
         🗺️ Visited ({formattedCountriesVisited.length})
       </Text>
       <Divider />
-      <SimpleGrid columns={2}>
+      <SimpleGrid
+        columns={{
+          base: 1,
+          md: 2,
+        }}
+      >
         {formattedCountriesVisited.map((country, i) => (
           <GridItem key={i}>
             <Text>{country}</Text>

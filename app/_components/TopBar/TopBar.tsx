@@ -3,10 +3,9 @@
 import { HStack } from "@chakra-ui/react";
 import { useModals } from "../../_providers/ModalContext";
 import { useSystemContext } from "../../_providers/SystemContext";
-import { generateRandomColor } from "../../_utils/colorUtils";
 import useWobblies from "../Wobblies/utils/useWobblies";
-import TopBarDropdown, { TopBarDropdownProps } from "./TopBarDropdown";
 import { generateRandomWobblie } from "../Wobblies/utils/wobblieUtils";
+import TopBarDropdown, { TopBarDropdownProps } from "./TopBarDropdown";
 
 const TopBar = () => {
   const { setState } = useSystemContext();

@@ -1,13 +1,8 @@
 import { Stack } from "@chakra-ui/react";
 import Modals from "../Modals/Modals";
 import Wobblies from "../Wobblies/Wobblies";
-import Applications from "./Applications";
-
-// TO DO
-// MOBILE FREUNDLICH
-// WORK CONTENT
-// REFACTOR
-// DEPLOY
+import Applications from "./Applications/Applications";
+import DraggableElements from "./DraggableElements";
 
 const Desktop = () => {
   return (
@@ -20,13 +15,7 @@ const Desktop = () => {
       position={"relative"}
       className="desktop"
     >
-      {typeof window !== "undefined" && (
-        <>
-          <Applications />
-          <Modals />
-          <Wobblies />
-        </>
-      )}
+      <DraggableElements />
     </Stack>
   );
 };
