@@ -18,21 +18,43 @@ const WorkRow: React.FC<WorkRowProps> = ({
   const [color, setColor] = React.useState<string>(generateRandomColor());
 
   return (
-    <Stack role="group" py={4} scale={5}>
+    <Stack
+      role="group"
+      py={4}
+      cursor={"pointer"}
+      onMouseEnter={() => {
+        setColor(getNewColor(color));
+      }}
+    >
       <HStack gap={4}>
         <Stack
           bgColor={color}
-          w={"120px"}
-          h={"60px"}
+          w={"60px"}
+          h={"40px"}
           rounded="md"
           align="center"
           justify="center"
           px={4}
-          onMouseEnter={() => {
-            setColor(getNewColor(color));
+          transition={"all 0.3s ease"}
+          _groupHover={{
+            w: "80px",
+            h: "60px",
           }}
         >
-          <Image src={image} h={"20px"} w="auto" alt="Work logo" />
+          <Image
+            src={image}
+            w="40px"
+            h="auto"
+            maxH={"20px"}
+            objectFit={"contain"}
+            alt="Work logo"
+            transition={"all 0.3s ease"}
+            _groupHover={{
+              w: "60px",
+              h: "auto",
+              maxH: "40px",
+            }}
+          />
         </Stack>
         <Stack gap={0}>
           <Text fontSize="medium">{title}</Text>

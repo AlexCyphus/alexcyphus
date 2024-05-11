@@ -4,14 +4,10 @@ import Wobblies from "../Wobblies/Wobblies";
 import Applications from "./Applications";
 
 // TO DO
-// UPDATE FONTS
 // MOBILE FREUNDLICH
-// HOBBIES MODAL
-// UPDATE ABOUT MODAL
-// -- ADD LINKS TO ABOUT
-// WORK MODAL
-// -- REDESIGN
-// -- IMAGES
+// WORK CONTENT
+// REFACTOR
+// DEPLOY
 
 const Desktop = () => {
   return (

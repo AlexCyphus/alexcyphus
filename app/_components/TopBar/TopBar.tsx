@@ -6,6 +6,7 @@ import { useSystemContext } from "../../_providers/SystemContext";
 import { generateRandomColor } from "../../_utils/colorUtils";
 import useWobblies from "../Wobblies/utils/useWobblies";
 import TopBarDropdown, { TopBarDropdownProps } from "./TopBarDropdown";
+import { generateRandomWobblie } from "../Wobblies/utils/wobblieUtils";
 
 const TopBar = () => {
   const { setState } = useSystemContext();
@@ -17,13 +18,13 @@ const TopBar = () => {
       title: "🥭",
       options: [
         {
-          title: "Built with 🥭 by Alex",
+          title: " 🥭 Built by Alex",
           action: () => {
-            window.open("");
+            window.open("https://github.com/AlexCyphus/alexcyphus");
           },
         },
         {
-          title: "Power off",
+          title: "🔌 Power off",
           action: () => {
             setState({
               isOn: false,
@@ -37,15 +38,27 @@ const TopBar = () => {
       title: "Contact",
       options: [
         {
-          title: "Send me an email",
+          title: "✉️ Send me an email",
           action: () => {
             window.open("mailto:alexjcyphus@gmail.com");
           },
         },
         {
-          title: "View my LinkedIn",
+          title: "👨‍💼 LinkedIn",
           action: () => {
             window.open("https://www.linkedin.com/in/alexcyphus/");
+          },
+        },
+        {
+          title: "🧑‍💻 GitHub",
+          action: () => {
+            window.open("https://github.com/alexcyphus");
+          },
+        },
+        {
+          title: "🏃‍♂️ Strava",
+          action: () => {
+            window.open("https://www.strava.com/athletes/77231772");
           },
         },
       ],
@@ -54,7 +67,7 @@ const TopBar = () => {
       title: "View",
       options: [
         {
-          title: "Close all windows",
+          title: "❌ Close all windows",
           action: closeAllModals,
         },
       ],
@@ -63,17 +76,13 @@ const TopBar = () => {
       title: "Wobblies",
       options: [
         {
-          title: "Add a wobblie",
+          title: "➕ Add a wobblie",
           action: () => {
-            addWobblie({
-              id: Math.random().toString(36).substring(7),
-              color: generateRandomColor(),
-              height: Math.floor(Math.random() * 440) + 60,
-            });
+            addWobblie(generateRandomWobblie());
           },
         },
         {
-          title: "Delete all wobblies",
+          title: "❌ Remove all wobblies",
           action: removeAllWobblies,
         },
       ],

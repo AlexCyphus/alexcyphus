@@ -29,15 +29,6 @@ const applications: ApplicationIconProps[] = [
     ),
     id: "work",
   },
-  {
-    title: "Hobbies",
-    icon: (
-      <Text textAlign="center" fontSize={"x-large"}>
-        🎨
-      </Text>
-    ),
-    id: "hobbies",
-  },
 ];
 
 const Applications = () => {
