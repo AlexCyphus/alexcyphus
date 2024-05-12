@@ -1,11 +1,13 @@
 "use client";
 
-import { HStack } from "@chakra-ui/react";
+import { Text, HStack } from "@chakra-ui/react";
 import { useModals } from "../../_providers/ModalContext";
 import { useSystemContext } from "../../_providers/SystemContext";
 import useWobblies from "../Wobblies/utils/useWobblies";
 import { generateRandomWobblie } from "../Wobblies/utils/wobblieUtils";
 import TopBarDropdown, { TopBarDropdownProps } from "./TopBarDropdown";
+import { useState } from "react";
+import Time from "./Time";
 
 const TopBar = () => {
   const { setState } = useSystemContext();
@@ -90,15 +92,18 @@ const TopBar = () => {
 
   return (
     <HStack
+      justifyContent={"space-between"}
       px={4}
       align={"center"}
-      gap={2}
-      borderColor={"black"}
       borderBottom={"1px"}
+      borderColor={"black"}
     >
-      {topBarData.map((item) => {
-        return <TopBarDropdown key={item.title} {...item} />;
-      })}
+      <HStack gap={2}>
+        {topBarData.map((item) => {
+          return <TopBarDropdown key={item.title} {...item} />;
+        })}
+      </HStack>
+      <Time />
     </HStack>
   );
 };
