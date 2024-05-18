@@ -34,12 +34,12 @@ export const SystemContextProvider: React.FC<SystemContextProviderProps> = ({
     highestZIndex: 1,
     wobblies: [
       generateRandomWobblie(),
-      generateRandomWobblie(),
-      generateRandomWobblie(),
-      generateRandomWobblie(),
-      generateRandomWobblie(),
-      generateRandomWobblie(),
-      generateRandomWobblie(),
+      // generateRandomWobblie(),
+      // generateRandomWobblie(),
+      // generateRandomWobblie(),
+      // generateRandomWobblie(),
+      // generateRandomWobblie(),
+      // generateRandomWobblie(),
     ],
   });
 

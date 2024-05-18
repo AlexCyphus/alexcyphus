@@ -1,13 +1,12 @@
 "use client";
 
-import { Text, HStack } from "@chakra-ui/react";
+import { HStack } from "@chakra-ui/react";
 import { useModals } from "../../_providers/ModalContext";
 import { useSystemContext } from "../../_providers/SystemContext";
 import useWobblies from "../Wobblies/utils/useWobblies";
 import { generateRandomWobblie } from "../Wobblies/utils/wobblieUtils";
-import TopBarDropdown, { TopBarDropdownProps } from "./TopBarDropdown";
-import { useState } from "react";
 import Time from "./Time";
+import TopBarDropdown, { TopBarDropdownProps } from "./TopBarDropdown";
 
 const TopBar = () => {
   const { setState } = useSystemContext();
@@ -103,7 +102,7 @@ const TopBar = () => {
           return <TopBarDropdown key={item.title} {...item} />;
         })}
       </HStack>
-      <Time />
+      {/* <Time /> */}
     </HStack>
   );
 };

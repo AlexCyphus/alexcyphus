@@ -20,6 +20,8 @@ const Wobblie: React.FC<IWobblie> = ({ color, id, height, animation }) => {
     y: Math.floor(Math.random() * window.innerHeight - height),
   };
 
+  console.log({ animation, color, id, height });
+
   return (
     <Draggable
       handle=".handle"
@@ -33,7 +35,8 @@ const Wobblie: React.FC<IWobblie> = ({ color, id, height, animation }) => {
           draggable={false}
           zIndex={0}
           color={color}
-          animation={animation}
+          // animation={animation}
+          transform={"rotate(0deg)"}
           dangerouslySetInnerHTML={{
             __html: getWobblieHtml(height),
           }}

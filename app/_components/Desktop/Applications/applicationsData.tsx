@@ -29,4 +29,13 @@ export const applicationsData: ApplicationIconProps[] = [
     ),
     id: "work",
   },
+  {
+    title: "Pong",
+    icon: (
+      <Text textAlign="center" fontSize={"x-large"}>
+        🏓
+      </Text>
+    ),
+    id: "pong",
+  },
 ];

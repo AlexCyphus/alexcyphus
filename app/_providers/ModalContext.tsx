@@ -30,7 +30,7 @@ interface ModalProviderProps {
 export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
   const [modals, setModals] = useState<ModalProps[]>([
     {
-      id: "about",
+      id: "pong",
       zIndex: 1,
     },
   ]);
