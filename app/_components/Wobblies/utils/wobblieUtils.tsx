@@ -9,13 +9,10 @@ const generateRandomAnimation = () => {
   // duration between 4 and 10 seconds
   const duration = Math.floor(Math.random() * 6) + 4;
 
-  const types = ["linear", "ease-in", "ease-out", "ease-in-out"];
-  const type = types[Math.floor(Math.random() * 4)];
-
   const spinTypes = ["spin", "reverse-spin"];
   const spinType = spinTypes[Math.floor(Math.random() * 2)];
 
-  return `${spinType} ${duration}s ${type} infinite`;
+  return `${spinType} ${duration}s linear infinite`;
 };
 
 export const generateRandomWobblie = (): IWobblie => {
