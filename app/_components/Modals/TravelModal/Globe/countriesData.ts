@@ -35,6 +35,7 @@ const countryEmojiMap: {
   "Montenegro": "🇲🇪",
   "Albania": "🇦🇱",
   "The Vatican": "🇻🇦",
+  "Turkey": "🇹🇷",
 } as const
 
 const livedIn = [
@@ -69,14 +70,16 @@ const visited = [
   "Montenegro",
   "Albania",
   "The Vatican",
+  "Turkey",
 ] as const;
 
-const allCountries = [...livedIn, ...visited] as const;
+const alphabeticalVisited = [...visited].sort((a, b) => a.localeCompare(b));
+const alphabeticalLivedIn = [...livedIn].sort((a, b) => a.localeCompare(b));
 
-export const formattedCountriesVisited = visited.map((country) => `${countryEmojiMap[country]} ${country}`)
-export const formattedCountriesLivedIn = livedIn.map((country) => `${countryEmojiMap[country]} ${country}`)
+const allCountries = [...alphabeticalVisited, ...alphabeticalLivedIn] as const;
 
-
+export const formattedCountriesVisited = alphabeticalVisited.map((country) => `${countryEmojiMap[country]} ${country}`)
+export const formattedCountriesLivedIn = alphabeticalLivedIn.map((country) => `${countryEmojiMap[country]} ${country}`)
 
 export const allVisitedCountriesLength = allCountries.length;
 export const percentageOfCountriesVisited = Math.round(((visited.length + livedIn.length) / TOTAL_COUNTRIES) * 10000) / 100;
