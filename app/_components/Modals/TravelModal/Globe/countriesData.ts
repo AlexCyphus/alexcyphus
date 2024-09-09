@@ -71,6 +71,7 @@ const visited = [
   "Albania",
   "The Vatican",
   "Turkey",
+  "Slovenia"
 ] as const;
 
 const alphabeticalVisited = [...visited].sort((a, b) => a.localeCompare(b));
