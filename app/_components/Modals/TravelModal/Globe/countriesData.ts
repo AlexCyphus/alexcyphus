@@ -36,6 +36,7 @@ const countryEmojiMap: {
   "Albania": "🇦🇱",
   "The Vatican": "🇻🇦",
   "Turkey": "🇹🇷",
+  "Slovenia": "🇸🇮",
 } as const
 
 const livedIn = [
