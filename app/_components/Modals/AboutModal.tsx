@@ -12,6 +12,8 @@ import {
   TANDEM_URL,
   THRONE_URL,
   VICO_URL,
+  LINKEDIN_URL,
+  EMAIL_URL,
 } from "../../_constants/urls";
 
 const MODAL_ID = "about";
@@ -41,8 +43,13 @@ const AboutModal = () => {
       {`>> Prev product manager:`} [<Link to={TANDEM_URL}>Tandem</Link>]
     </Text>,
     ">> Super interested in languages (🇨🇦/🇨🇴/🇩🇪), finance/economics, and above all solving real world problems through code (frontend, backend, mobile).",
-    ">> I'm always up for a chat, so feel free to reach out to me on LinkedIn or via email.",
-    ">> Click around to learn more or to just move the wobblies around.",
+    <Text key="contact">
+      {`>> I'm always up for a chat, so feel free to reach out to me on `}
+      <Link to={LINKEDIN_URL}>LinkedIn</Link>
+      {` or via `}
+      <Link to={EMAIL_URL}>email</Link>.
+    </Text>,
+
   ];
 
   return (
