@@ -21,12 +21,22 @@ export const applicationsData: ApplicationIconProps[] = [
     id: "travel",
   },
   {
-    title: "Work",
+    title: "Resume",
     icon: (
       <Text textAlign="center" fontSize={"x-large"}>
-        🧑‍💻
+        📄
       </Text>
     ),
-    id: "work",
+    id: "resume",
   },
+  {
+    title: "Projects",
+    icon: (
+      <Text textAlign="center" fontSize={"x-large"}>
+        👨‍💻
+      </Text>
+    ),
+    id: "projects",
+  },
+
 ];

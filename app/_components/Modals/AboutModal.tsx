@@ -4,8 +4,10 @@ import { ReactNode } from "react";
 import Link from "../Atoms/Link";
 import {
   AMEYO_URL,
+  DEUTSCH_DICTIONARY_URL,
   KAARDS_URL,
   LHOTSE_URL,
+  MYLIST_URL,
   STACKINVERSE_URL,
   TANDEM_URL,
   THRONE_URL,
@@ -24,8 +26,12 @@ const AboutModal = () => {
       engineer to help grow the creator economy.
     </Text>,
     <Text key="prev-built">
-      {`>> Prev built:`} [<Link to={STACKINVERSE_URL}>StackInverse</Link>,{" "}
-      <Link to={KAARDS_URL}>kaards</Link>, <Link to={AMEYO_URL}>Ameyo</Link>]
+      {`>> Prev built: [`}
+      <Link to={MYLIST_URL}>MyList</Link>,{" "}
+      <Link to={DEUTSCH_DICTIONARY_URL}>DeutschDictionary</Link>,{" "}
+      [<Link to={STACKINVERSE_URL}>StackInverse</Link>,{" "}
+      <Link to={KAARDS_URL}>Kaards</Link>,
+      <Link to={AMEYO_URL}>Ameyo</Link>]
     </Text>,
     <Text key="swe">
       {`>> Prev software engineer:`} [<Link to={THRONE_URL}>Throne</Link>,{" "}
@@ -34,7 +40,7 @@ const AboutModal = () => {
     <Text key="pm">
       {`>> Prev product manager:`} [<Link to={TANDEM_URL}>Tandem</Link>]
     </Text>,
-    ">> Super interested in languages (🇨🇦/🇨🇴/🇩🇪/🇧🇷), tech-for-good, travel/remote-work, economics, and above all solving real world problems through code (frontend, backend, mobile).",
+    ">> Super interested in languages (🇨🇦/🇨🇴/🇩🇪), finance/economics, and above all solving real world problems through code (frontend, backend, mobile).",
     ">> I'm always up for a chat, so feel free to reach out to me on LinkedIn or via email.",
     ">> Click around to learn more or to just move the wobblies around.",
   ];
