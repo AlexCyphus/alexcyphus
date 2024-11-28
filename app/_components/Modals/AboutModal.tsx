@@ -1,20 +1,19 @@
 import { Text } from "@chakra-ui/react";
-import Modal from "./Modal/Modal";
-import { ReactNode } from "react";
-import Link from "../Atoms/Link";
 import {
   AMEYO_URL,
   DEUTSCH_DICTIONARY_URL,
+  EMAIL_URL,
   KAARDS_URL,
   LHOTSE_URL,
+  LINKEDIN_URL,
   MYLIST_URL,
   STACKINVERSE_URL,
   TANDEM_URL,
   THRONE_URL,
   VICO_URL,
-  LINKEDIN_URL,
-  EMAIL_URL,
 } from "../../_constants/urls";
+import Link from "../Atoms/Link";
+import Modal from "./Modal/Modal";
 
 const MODAL_ID = "about";
 
