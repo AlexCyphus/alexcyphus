@@ -1,3 +1,5 @@
+"use client";
+
 import { Stack } from "@chakra-ui/react";
 import Globe from "react-globe.gl";
 import useDisableGlobeScroll from "./useDisableGlobeScroll";
@@ -5,8 +7,6 @@ import { globeCountriesData } from "./countriesData";
 
 const CountriesGlobe: React.FC = () => {
   const globeRef = useDisableGlobeScroll();
-
-  if (typeof window === "undefined") return null;
 
   const globeSize = window.screen.width > 450 ? 450 : 250;
 
