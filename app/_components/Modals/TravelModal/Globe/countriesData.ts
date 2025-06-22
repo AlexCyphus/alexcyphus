@@ -37,6 +37,10 @@ const countryEmojiMap: {
   "The Vatican": "🇻🇦",
   "Turkey": "🇹🇷",
   "Slovenia": "🇸🇮",
+  "Georgia": "🇬🇪",
+  "Malaysia": "🇲🇾",
+  "Singapore": "🇸🇬",
+  "Qatar": "🇶🇦",
 } as const
 
 const livedIn = [
@@ -72,7 +76,12 @@ const visited = [
   "Albania",
   "The Vatican",
   "Turkey",
-  "Slovenia"
+  "Slovenia",
+  "Georgia",
+  "Malaysia",
+  "Singapore",
+  "Qatar",
+  "Georgia"
 ] as const;
 
 const alphabeticalVisited = [...visited].sort((a, b) => a.localeCompare(b));

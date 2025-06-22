@@ -1,4 +1,5 @@
 export const THRONE_URL = 'https://throne.com'
+export const CLOZEMASTER_URL = 'https://www.clozemaster.com'
 export const STACKINVERSE_URL = 'https://stackinverse.ca'
 export const KAARDS_URL = 'https://kaards.io'
 export const LHOTSE_URL = 'https://lhotse.de'
@@ -8,4 +9,5 @@ export const VICO_URL = 'https://getvico.com'
 export const DEUTSCH_DICTIONARY_URL = 'https://deutschdictionary.com'
 export const MYLIST_URL = 'https://mylist.is'
 export const LINKEDIN_URL = "https://www.linkedin.com/in/alexcyphus/"
+export const VOCAB_OF_THE_DAY_URL = 'https://www.vocaboftheday.com/'
 export const EMAIL_URL = 'mailto:alexjcyphus@gmail.com'
