@@ -77,7 +77,6 @@ const visited = [
   "The Vatican",
   "Turkey",
   "Slovenia",
-  "Georgia",
   "Malaysia",
   "Singapore",
   "Qatar",
