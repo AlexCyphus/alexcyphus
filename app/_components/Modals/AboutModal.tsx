@@ -30,7 +30,7 @@ const AboutModal = () => {
     </Text>,
     <Text key="prev-built">
     {`>> Former side projects 🪦: [`}
-    <Link to={KAARDS_URL}>Kaards</Link>,
+    <Link to={KAARDS_URL}>Kaards</Link>
     ]
   </Text>,
     ">> Super interested in projects related to languages (I speak 🇨🇦/🇨🇴/🇩🇪), travel, and finance/economics.",
